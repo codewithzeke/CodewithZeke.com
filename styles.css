@@ -1,0 +1,185 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.solar-system {
+  position: relative;
+  width: 600px; /* Increase the container size */
+  height: 600px;
+}
+
+.sun {
+  width: 20px;
+  height: 20px;
+  background-color: yellow;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 5px 2px yellow;
+}
+
+.orbit-path {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  border: 2px dashed white;
+  transform: translate(-50%, -50%);
+  pointer-events: none; /* Ensures they don't interfere */
+}
+
+.orbit1 { width: 140px; height: 140px; }
+.orbit2 { width: 180px; height: 180px; }
+.orbit3 { width: 220px; height: 220px; }
+.orbit4 { width: 260px; height: 260px; }
+.orbit5 { width: 300px; height: 300px; }
+.orbit6 { width: 340px; height: 340px; }
+.orbit7 { width: 380px; height: 380px; }
+.orbit8 { width: 420px; height: 420px; }
+.orbit9 { width: 460px; height: 460px; }
+
+.planet {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: 50% 50%;
+}
+
+.planet-body {
+  width: 6px; /* Reduce the planet size */
+  height: 6px;
+  border-radius: 50%;
+  position: absolute;
+  top: -50%;
+  left: -50%;
+}
+
+/* Increase the distance and adjust the animation timing */
+.orbit1 {
+  animation: rotateOrbit1 1s linear infinite;
+}
+
+.orbit2 {
+  animation: rotateOrbit2 3s linear infinite;
+}
+
+.orbit3 {
+  animation: rotateOrbit3 4s linear infinite;
+}
+
+.orbit4 {
+  animation: rotateOrbit4 5s linear infinite;
+}
+
+.orbit5 {
+  animation: rotateOrbit5 6s linear infinite;
+}
+
+.orbit6 {
+  animation: rotateOrbit6 7s linear infinite;
+}
+
+.orbit7 {
+  animation: rotateOrbit7 8s linear infinite;
+}
+
+.orbit8 {
+  animation: rotateOrbit8 9s linear infinite;
+}
+
+.orbit9 {
+  animation: rotateOrbit9 10s linear infinite;
+}
+
+@keyframes rotateOrbit1 {
+  0% {
+    transform: rotate(0deg) translateX(70px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(70px) rotate(-360deg);
+  }
+}
+
+@keyframes rotateOrbit2 {
+  0% {
+    transform: rotate(0deg) translateX(90px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(90px) rotate(-360deg);
+  }
+}
+
+@keyframes rotateOrbit3 {
+  0% {
+    transform: rotate(0deg) translateX(110px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(110px) rotate(-360deg);
+  }
+}
+
+@keyframes rotateOrbit4 {
+  0% {
+    transform: rotate(0deg) translateX(130px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(130px) rotate(-360deg);
+  }
+}
+
+@keyframes rotateOrbit5 {
+  0% {
+    transform: rotate(0deg) translateX(150px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(150px) rotate(-360deg);
+  }
+}
+
+@keyframes rotateOrbit6 {
+  0% {
+    transform: rotate(0deg) translateX(170px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(170px) rotate(-360deg);
+  }
+}
+
+@keyframes rotateOrbit7 {
+  0% {
+    transform: rotate(0deg) translateX(190px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(190px) rotate(-360deg);
+  }
+}
+
+@keyframes rotateOrbit8 {
+  0% {
+    transform: rotate(0deg) translateX(210px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(210px) rotate(-360deg);
+  }
+}
+
+@keyframes rotateOrbit9 {
+  0% {
+    transform: rotate(0deg) translateX(230px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(230px) rotate(-360deg);
+  }
+}
