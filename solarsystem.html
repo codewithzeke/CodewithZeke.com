@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Solar System with Orbits</title>
+<style>
+  body {
+    margin: 0;
+    background-color: black;
+    overflow: hidden;
+  }
+  canvas {
+    display: block;
+  }
+</style>
+</head>
+<body>
+<canvas id="solarSystem"></canvas>
+
+<script>
+const canvas = document.getElementById("solarSystem");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const SUN = { x: canvas.width/2, y: canvas.height/2, radius: 20, color: 'yellow' };
+
+const planets = [
+    { radius: 50, angle: 0, speed: 0.02, color: 'blue', size: 8 },
+    { radius: 100, angle: 0, speed: 0.015, color: 'red', size: 10 },
+    { radius: 150, angle: 0, speed: 0.01, color: 'green', size: 12 },
+    { radius: 200, angle: 0, speed: 0.008, color: 'orange', size: 14 },
+];
+
+function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // Draw Sun
+    ctx.beginPath();
+    ctx.arc(SUN.x, SUN.y, SUN.radius, 0, Math.PI * 2);
+    ctx.fillStyle = SUN.color;
+    ctx.fill();
+
+    // Draw orbit paths (dotted circles)
+    planets.forEach(planet => {
+        ctx.beginPath();
+        ctx.setLineDash([5, 5]); // dotted line
+        ctx.arc(SUN.x, SUN.y, planet.radius, 0, Math.PI * 2);
+        ctx.strokeStyle = 'white';
+        ctx.stroke();
+        ctx.setLineDash([]); // reset to solid lines for planets
+    });
+
+    // Draw planets
+    planets.forEach(planet => {
+        const x = SUN.x + planet.radius * Math.cos(planet.angle);
+        const y = SUN.y + planet.radius * Math.sin(planet.angle);
+
+        ctx.beginPath();
+        ctx.arc(x, y, planet.size, 0, Math.PI * 2);
+        ctx.fillStyle = planet.color;
+        ctx.fill();
+
+        planet.angle += planet.speed;
+    });
+
+    requestAnimationFrame(draw);
+}
+
+draw();
+</script>
+</body>
+</html>
